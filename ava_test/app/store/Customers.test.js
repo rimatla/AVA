@@ -1,6 +1,6 @@
 import test from 'ava'
 // import sinon from 'sinon' // you'll need to install this with `npm install --save-dev sinon`
-// import store from './Customers'
+import store from './Customers'
 
 // change this from `test.skip(` to simply `test(`
 test.skip('customers should start with empty', t => {

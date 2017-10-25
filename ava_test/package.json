@@ -8,11 +8,8 @@
     "test": "ava \"app/**/*.test.js\" --verbose",
     "watch:test": "npm run test -- --watch",
     "cover": "nyc npm run test",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "lint": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kentcdodds/react-ava-workshop.git"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
@@ -29,6 +26,7 @@
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.5.0",
     "babel-preset-stage-2": "6.5.0",
+    "babel-register": "^6.26.0",
     "eslint": "2.12.0",
     "eslint-config-kentcdodds": "6.2.1",
     "eslint-plugin-react": "5.1.1",
@@ -43,5 +41,11 @@
       "text",
       "html"
     ]
+  },
+  "ava": {
+    "require": [
+      "./test/helpers/setup-test-env.js"
+    ]
   }
+
 }

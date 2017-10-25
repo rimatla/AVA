@@ -1,4 +1,4 @@
-AVA:
+*AVA:
 - Minimal and Fast
 - Simple test syntax
 - Runs test concurrently
@@ -14,14 +14,14 @@ AVA:
 - Optional TAP output
 - Clean stack traces
 
-Testing React
+*Testing React
 - 3 inputs: Props, User, Data
 
 package.json
-Use anything inside app folder that ends in test.js
+*Use anything inside app folder that ends in test.js
 "test": "ava \"app/**/*.test.js\" --verbose"
 
-TDD
+*TDD
 Watch your feature as you develop making sure that nothing breaks.
 
 AVA's watch mode is intelligent to know which of your tests to run.
@@ -32,11 +32,17 @@ $npm install --save
 $npm install --save-dev ava
 $npm i -D nyc
 $npm install -g npm-quick-run (This creates two aliases nrun and nr)
+$npm i -D babel-register
 
 $npm t
 $npm run watch:test
 $nr cover or nr c
+$nr check-coverage
+$nr w
 
-To see coverage reports:
+*To see coverage reports:
 $open coverage/lcov-report/index.html
+
+*Set up a code coverage threshold for your project
+"check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
 
