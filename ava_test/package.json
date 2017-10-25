@@ -33,7 +33,7 @@
     "nyc": "^11.2.1",
     "react": "15.1.0",
     "react-dom": "15.1.0",
-    "sinon": "1.17.4"
+    "sinon": "^1.17.4"
   },
   "nyc": {
     "reporter": [
@@ -47,5 +47,4 @@
       "./test/helpers/setup-test-env.js"
     ]
   }
-
 }
