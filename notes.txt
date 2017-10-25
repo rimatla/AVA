@@ -16,3 +16,7 @@ AVA:
 
 Testing React
 - 3 inputs: Props, User, Data
+
+package.json
+Use anything inside app folder that ends in test.js
+"test": "ava \"app/**/*.test.js\" --verbose"
