@@ -1,3 +1,5 @@
+git checkout start
+
 Documentation
 https://www.npmjs.com/package/ava
 https://github.com/avajs/ava
@@ -44,7 +46,7 @@ $npm install --save-dev sinon
 
 $npm t
 $npm run watch:test
-$nr cover or nr c
+$nr cover or nr c (shows graphic and creates nyc & coverage folders)
 $nr check-coverage
 $nr w
 
