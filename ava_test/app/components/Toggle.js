@@ -32,6 +32,5 @@ Toggle.propTypes = {
   onToggle: PropTypes.func,
   children: PropTypes.any,
 }
+
 export default Toggle
-
-

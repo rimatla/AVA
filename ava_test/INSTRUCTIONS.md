@@ -67,7 +67,7 @@ You should get output that looks like this:
 - containers › CustomerList › unsubscribes when unmounted
 
 0 tests passed
-10 tests skip
+10 tests todo
 ```
 
 Great! Before we move onto the next dependency, let's add another script. AVA has an incredibly intelligent `watch`
@@ -90,7 +90,7 @@ I like to follow :-)
 🐯 Now run `npm run watch:test`
 
 You should get output pretty much like before, only this time, you should notice that the process hasn't stopped. Go to
-one of the test or source files in `app/` and make a change (add a comment or a new line) and safe the file. You should
+one of the test or source files in `app/` and make a change (add a comment or a new line) and save the file. You should
 see AVA re-run only the tests effected by that change. Totally awesome right?!
 
 🐯 Now stop the process with <kbd>CTL</kbd>+<kbd>c</kbd>
@@ -155,7 +155,7 @@ coverage:
   - store › Customers › subscribing to the store
 
   0 tests passed
-  10 tests skip
+  10 tests todo
 
 ----------|----------|----------|----------|----------|----------------|
 File      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
@@ -273,7 +273,7 @@ kidding! That would be incredibly lame! AVA has a flag (`--require`) that we can
 However, instead of just using `--require babel-register`, we're going to add a new file to do this for us because
 we're going to add more environment setup code in there soon.
 
-🐯 So create a new directory called `test/` and put a new file called `setup-ava-tests.js`.
+🐯 So create a new directory called `test/helpers/` and put a new file called `setup-test-env.js`.
 Then and place this in there:
 
 ```javascript
@@ -287,7 +287,7 @@ of our `package.json` like so:
 ```javascript
 "ava": {
   "require": [
-    "./test/setup-ava-tests.js"
+    "./test/helpers/setup-test-env.js"
   ]
 }
 ```
@@ -307,7 +307,7 @@ of our `package.json` like so:
 - store › Customers › subscribing to the store
 
 0 tests passed
-10 tests skip
+10 tests todo
 ```
 
 Awesome! 🎉 Now, just to be sure, run `npm run cover` and you should get output like this:
@@ -359,7 +359,7 @@ Once you're all done, your output should look like this:
   ✔ store › Customers › subscribing to the store
 
   3 tests passed
-  7 tests skip
+  7 tests todo
 
 ---------------|----------|----------|----------|----------|----------------|
 File           |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
@@ -408,7 +408,7 @@ the same way it transpiles our source. This is configured in our `package.json` 
 "ava": {
   "babel": "inherit",
   "require": [
-    "./test/setup-ava-tests.js"
+    "./test/helpers/setup-test-env.js"
   ]
 }
 ```
@@ -432,7 +432,7 @@ Once you get the first two tests working, your `npm run cover` output should loo
   - components › Toggle › invokes the onToggle prop when clicked
 
   5 tests passed
-  5 tests skip
+  5 tests todo
 
 
 ---------------|----------|----------|----------|----------|----------------|
@@ -475,7 +475,7 @@ npm install --save-dev jsdom
 
 With that installed, now we need each one of our tests to have the global
 environment set up with this (because most of our tests will need this). 🐯 So go
-ahead and open the `setup-ava-tests.js` file in the `other/` directory and just
+ahead and open the `setup-test-env.js` file in the `test/helpers/` directory and just
 paste this in:
 
 ```javascript
@@ -513,7 +513,7 @@ like this:
   ✔ components › Toggle › invokes the onToggle prop when clicked
 
   6 tests passed
-  4 tests skip
+  4 tests todo
 
 ---------------|----------|----------|----------|----------|----------------|
 File           |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
@@ -551,7 +551,7 @@ importing a singleton store and using it directly, we specify it as a default pr
 and use it from `this.props`. What's nice about this is it allows us to override
 it for our tests.
 
-If you look at the currently implementation of `CustomerList` in the
+If you look at the current implementation of `CustomerList` in the
 `app/containers` directory, you'll see that it is just using the imported store.
 🐯 Your task is to update `CustomerList.js` component to use `defaultProps` instead
 and reference the store via `props.store`.
@@ -559,7 +559,7 @@ and reference the store via `props.store`.
 🐯 Once you've finished that, open the `CustomerList.test.js` file.
 
 You'll notice that in the last test, you have to use `document.createElement`.
-Good thing we already set up the DOM in our `setup-ava-tests.js` so we can do
+Good thing we already set up the DOM in our `setup-tests-env.js` so we can do
 that! The reason we have to is the lifecycle hook `componentDidMount` does not run
 when you use `renderToStaticMarkup` and that's where this component subscribes to
 the store. Same goes for the unsubscription code in `componentWillUnmount`.
