@@ -1,0 +1,18 @@
+AVA:
+- Minimal and Fast
+- Simple test syntax
+- Runs test concurrently
+- Enforces writing atomic tests
+- No implicit globals
+- Isolated environment for each test file
+- Write your tests in ES6
+- Promise Support
+- Generator Function support
+- Async Function support
+- Observable support
+- Enhanced assets
+- Optional TAP output
+- Clean stack traces
+
+Testing React
+- 3 inputs: Props, User, Data
