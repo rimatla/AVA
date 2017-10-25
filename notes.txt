@@ -20,3 +20,23 @@ Testing React
 package.json
 Use anything inside app folder that ends in test.js
 "test": "ava \"app/**/*.test.js\" --verbose"
+
+TDD
+Watch your feature as you develop making sure that nothing breaks.
+
+AVA's watch mode is intelligent to know which of your tests to run.
+
+
+$npm commands
+$npm install --save
+$npm install --save-dev ava
+$npm i -D nyc
+$npm install -g npm-quick-run (This creates two aliases nrun and nr)
+
+$npm t
+$npm run watch:test
+$nr cover or nr c
+
+To see coverage reports:
+$open coverage/lcov-report/index.html
+

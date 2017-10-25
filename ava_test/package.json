@@ -6,6 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "ava \"app/**/*.test.js\" --verbose",
+    "watch:test": "npm run test -- --watch",
+    "cover": "nyc npm run test",
     "lint": "eslint ."
   },
   "repository": {
@@ -30,8 +32,16 @@
     "eslint": "2.12.0",
     "eslint-config-kentcdodds": "6.2.1",
     "eslint-plugin-react": "5.1.1",
+    "nyc": "^11.2.1",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "sinon": "1.17.4"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 import test from 'ava'
 // import sinon from 'sinon' // you should have installed this in the last step
-
+import './foo'
 // import React from 'react'
 // import {renderToStaticMarkup} from 'react-dom/server'
 
