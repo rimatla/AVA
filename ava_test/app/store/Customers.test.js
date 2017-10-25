@@ -17,7 +17,6 @@ test('customers should start with empty', t => {
 })
 
 //Test 2
-// change this from `test.skip(` to simply `test(`
 test('setting customers and getting them', t => {
   // create two or more objects with a string property called `name`
   // call store.setCustomers with an array of these objects
@@ -35,7 +34,6 @@ test('setting customers and getting them', t => {
 })
 
 //Test 3
-// change this from `test.skip(` to simply `test(`
 test('subscribing to the store', t => {
   // create a function spy with `sinon.spy()`
   // use that spy to subscribe to the store and assign the unsubscribe function
