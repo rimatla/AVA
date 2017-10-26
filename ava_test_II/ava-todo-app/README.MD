@@ -48,6 +48,14 @@
     
 ### Modify our sample test file, src/App.test.js, to use AVA instead of Jest, then run
 `npm test`
+
+### Now that we have built a basic UI, we can start testing. First, we'll install a couple of dependencies:
+`npm install --save-dev enzyme react-addons-test-utils sinon redux-mock-store
+
+### Enzime: We're using Enzyme because its API is simpler and more powerful than Test Utilities. It exposes three types of rendering React components:
+`import { shallow } from 'enzyme'; // shallow rendering
+ import { mount } from 'enzyme'; // full DOM rendering
+ import { render } from 'enzyme'; // static rendering`
     
 
     
