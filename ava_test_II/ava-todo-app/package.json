@@ -17,12 +17,19 @@
     "ava": "^0.23.0",
     "babel-preset-react-app": "^3.0.3",
     "babel-register": "^6.26.0",
-    "cross-env": "^5.1.0"
+    "cross-env": "^5.1.0",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "^11.3.0"
   },
   "babel": {
     "presets": "react-app"
   },
   "ava": {
-    "babel": "inherit"
+    "babel": "inherit",
+    "require": [
+      "babel-register",
+      "ignore-styles",
+      "./src/test-setup"
+    ]
   }
 }
