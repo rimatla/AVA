@@ -45,3 +45,10 @@
         "./src/test-setup"
       ]
     }``
+    
+### Modify our sample test file, src/App.test.js, to use AVA instead of Jest, then run
+`npm test`
+    
+
+    
+    
