@@ -37,3 +37,11 @@
 #### inside src directory create a test-setup.js
 
 #### add it to our AVA configuration, under require.
+``"ava": {
+      "babel": "inherit",
+      "require": [
+        "babel-register",
+        "ignore-styles",
+        "./src/test-setup"
+      ]
+    }``
